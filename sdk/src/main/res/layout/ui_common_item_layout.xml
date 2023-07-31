@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/mLeftIcon"
+        style="@style/MarginLeft15"
+        android:layout_width="@dimen/dp_23"
+        android:layout_height="@dimen/dp_23"/>
+
+    <TextView
+        android:id="@+id/mTitle"
+        style="@style/MarginLeft15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="#4d4d4d"
+        android:textSize="@dimen/sp_16" />
+
+
+    <TextView
+        android:id="@+id/mTitleContent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_10"
+        android:ellipsize="end"
+        android:gravity="right|center_vertical"
+        android:lines="1"
+        tools:ignore="RtlHardcoded" />
+
+    <ImageView
+        android:id="@+id/mRightImage"
+        style="@style/MarginRight10"
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="@dimen/dp_15"
+        android:background="@drawable/icon_right_image"
+        tools:ignore="ContentDescription" />
+
+    <com.ktx.lib.widget.XSwitch
+        android:id="@+id/mOnOff"
+        style="@style/MarginRight10"
+        android:layout_width="@dimen/dp_55"
+        android:layout_height="@dimen/dp_30"
+        app:sb_show_indicator="false" />
+</LinearLayout>

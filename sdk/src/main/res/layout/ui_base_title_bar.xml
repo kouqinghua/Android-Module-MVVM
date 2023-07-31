@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mBaseToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44.5dp"
+            android:background="@color/trans">
+
+            <FrameLayout
+                android:id="@+id/mBaseBack"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="44.5dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/mBaseBackIcon"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:src="@drawable/icon_black_back"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/mBaseRight"
+                android:layout_width="wrap_content"
+                android:layout_height="44.5dp"
+                style="@style/MarginRight10"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/mBaseRightText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="#4d4d4d"
+                    android:textStyle="bold"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/mBaseTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxWidth="240dp"
+                android:textColor="#4d4d4d"
+                android:textSize="@dimen/sp_16"
+                tools:ignore="RelativeOverlap" />
+
+            <View
+                android:id="@+id/mBaseTitleBarLine"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="#ebebeb" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</layout>
