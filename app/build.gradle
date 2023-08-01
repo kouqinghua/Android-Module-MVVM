@@ -19,7 +19,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
-            abiFilters "armeabi", "armeabi-v7a"
+            abiFilters "armeabi", "armeabi-v7a", "x86_64"
         }
     }
 
@@ -81,5 +81,5 @@ dependencies {
     implementation 'com.hi-dhl:binding:1.0.7'
     implementation project(path: ':sdk')
 
-    implementation (name:'ble-release', ext:'aar')
+    implementation(name: 'ble-release', ext: 'aar')
 }

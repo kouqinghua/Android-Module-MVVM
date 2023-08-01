@@ -168,7 +168,7 @@ class SwipeMenuLayout(context: Context?, attrs: AttributeSet? = null, defStyle: 
 
 
     init {
-        mTouchSlop = ViewConfiguration.get(context).scaledTouchSlop
+        mTouchSlop = ViewConfiguration.get(context!!).scaledTouchSlop
         //初始化滑动帮助类对象
         mScroller = Scroller(context)
     }

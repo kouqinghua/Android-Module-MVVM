@@ -111,6 +111,8 @@ abstract class SdkFragment(layoutId: Int) : Fragment(layoutId), LifecycleObserve
                 hideProgress(mActivity)
                 error()
             }
+
+            else -> {}
         }
     }
 

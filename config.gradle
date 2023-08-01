@@ -2,15 +2,15 @@ ext {
     // 开发测试模式 true-->isModule
     // 上线打包模式 false-->library
     isApp = false
-    compileSdkVersion = 31
-    targetSdkVersion = 31
+    compileSdkVersion = 33
+    targetSdkVersion = 33
     minSdkVersion = 21
     versionCode = 10
     versionName = '1.0'
 
     // 以下为引用库的版本号
     coroutines_version = '1.4.3'
-    lifecycle_version = '2.3.1'
+    lifecycle_version = '2.4.1'
     retrofit_version = '2.9.0'
     fragment_version = '1.3.6'
     arouter_version = '1.5.1'
@@ -20,18 +20,17 @@ ext {
 
     dependencies = [
             publicDependencies: [
-                    'androidx.core:core-ktx:1.3.2',
-                    'androidx.appcompat:appcompat:1.3.0',
-                    'com.google.android.material:material:1.4.0',
+                    'androidx.core:core-ktx:1.7.0',
+                    'androidx.appcompat:appcompat:1.4.1',
+                    'com.google.android.material:material:1.5.0',
                     'androidx.constraintlayout:constraintlayout:2.1.0',
                     "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
             ],
             // 公共库 引用方式 api
             common            : [// 顶部状态栏沉浸
                                  "androidx.fragment:fragment-ktx:$fragment_version",
+                                 "androidx.activity:activity-ktx:$fragment_version",
                                  "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
-                                 "com.squareup.retrofit2:retrofit:$retrofit_version",
-                                 "com.squareup.retrofit2:converter-gson:$retrofit_version",
                                  "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
                                  "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
                                  "com.github.bumptech.glide:glide:$glide_version",
@@ -40,7 +39,10 @@ ext {
                                  "org.koin:koin-android-ext:$koin_version",
                                  "com.alibaba:arouter-api:$arouter_version",
                                  "com.geyifeng.immersionbar:immersionbar:$immersionbar_version",
-                                 "com.gyf.immersionbar:immersionbar-ktx:3.0.0"
+                                 "com.gyf.immersionbar:immersionbar-ktx:3.0.0",
+                                 'com.squareup.okhttp3:okhttp:4.9.0',
+                                 "com.squareup.retrofit2:retrofit:$retrofit_version",
+                                 "com.squareup.retrofit2:converter-gson:$retrofit_version"
             ],
             // compiler库 引用方式 kapt 基本上都需要引用, lib_common中可以不引入
             compiler          : [
