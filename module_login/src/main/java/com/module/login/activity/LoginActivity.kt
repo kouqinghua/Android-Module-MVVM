@@ -13,7 +13,14 @@ class LoginActivity : BaseActivity<LoginLayoutBinding, LoginViewModel>() {
     override val mViewModel: LoginViewModel = get()
 
     override fun initialize() {
-        mViewModel.getBanner().observe(this){
+
+    }
+
+    override fun LoginLayoutBinding.initView() {
+    }
+
+    override fun initRequestData() {
+        mViewModel.getBanner().observe(this) {
             console(it[0].title)
         }
     }

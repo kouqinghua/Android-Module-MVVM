@@ -18,14 +18,23 @@ class MainActivity : BaseActivity<MainActivityBinding, MainViewModel>(), BaseBin
 
     override val mViewModel: MainViewModel = get()
 
-    override fun initialize() {
-        mBinding.mRooms.addItemDecoration(GridDecoration(5, 3))
-        mBinding.mRooms.layoutManager = GridLayoutManager(this, 3)
+
+    override fun MainActivityBinding.initView() {
+        mRooms.addItemDecoration(GridDecoration(5, 3))
+        mRooms.layoutManager = GridLayoutManager(mmContext, 3)
 
         val adapter = RoomAdapter(R.layout.room_item_layout)
         adapter.setData(mViewModel.getRooms())
-        adapter.setOnItemClickListener(this)
-        mBinding.mRooms.adapter = adapter
+        adapter.setOnItemClickListener(this@MainActivity)
+        mRooms.adapter = adapter
+    }
+
+    override fun initialize() {
+
+    }
+
+    override fun initRequestData() {
+
     }
 
     override fun onItemClick(position: Int) {

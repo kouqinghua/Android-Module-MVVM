@@ -1,9 +1,11 @@
 package com.lib.base.utils
 
+import android.annotation.SuppressLint
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
 import com.lib.base.BuildConfig
 import com.lib.base.app.BaseApplication
+import com.lib.base.network.state.NetworkStateClient
 
 object BasicLibInit {
 
@@ -20,5 +22,15 @@ object BasicLibInit {
         }
         ARouter.init(application)
         return "ARouter -->> init complete"
+    }
+
+    /**
+     * 初始化网络状态监听客户端
+     * @return Unit
+     */
+    @SuppressLint("MissingPermission")
+    fun initNetworkStateClient(): String {
+        NetworkStateClient.register(application)
+        return "NetworkStateClient -->> init complete"
     }
 }
