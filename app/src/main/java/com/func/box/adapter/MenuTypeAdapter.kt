@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import com.func.box.bean.Menu
 import com.func.box.databinding.ItemMenuTypeLayoutBinding
-import com.ktx.lib.base.BaseBindAdapter
+import com.lib.base.app.BaseBindAdapter
 
 class MenuTypeAdapter(layoutId: Int) : BaseBindAdapter<Menu, ItemMenuTypeLayoutBinding>(layoutId) {
 

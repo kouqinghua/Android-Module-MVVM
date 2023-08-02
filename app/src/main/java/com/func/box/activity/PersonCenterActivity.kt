@@ -1,9 +1,6 @@
 package com.func.box.activity
 
 import androidx.appcompat.app.AppCompatActivity
-import com.func.box.databinding.PersonCenterLayoutBinding
-import com.ktx.lib.base.BaseVMActivity
-import com.ktx.lib.ext.binding
 
 class PersonCenterActivity : AppCompatActivity() {
 

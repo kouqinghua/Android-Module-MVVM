@@ -3,7 +3,7 @@ package com.func.box.adapter
 import android.annotation.SuppressLint
 import com.func.box.bean.MenuItem
 import com.func.box.databinding.ItemMealLayoutBinding
-import com.ktx.lib.base.BaseBindAdapter
+import com.lib.base.app.BaseBindAdapter
 
 class MealListAdapter(layoutId: Int) : BaseBindAdapter<MenuItem, ItemMealLayoutBinding>(layoutId) {
 

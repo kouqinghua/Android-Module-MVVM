@@ -1,6 +1,5 @@
 rootProject.name = "SuperFoot"
 include ':app'
-include ':sdk'
 include ':module_login'
 include ':lib_common'
 include ':module_main'

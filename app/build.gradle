@@ -65,21 +65,16 @@ kapt {
 
 dependencies {
     implementation rootProject.ext.dependencies.publicDependencies
+
     implementation project(path: ':lib_common')
 
     rootProject.ext.dependencies.modules.each {
         implementation project(path: it)
     }
 
-    rootProject.ext.dependencies.compiler.each {
-        kapt(it)
-    }
-
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'com.hi-dhl:binding:1.0.7'
-    implementation project(path: ':sdk')
 
     implementation(name: 'ble-release', ext: 'aar')
 }

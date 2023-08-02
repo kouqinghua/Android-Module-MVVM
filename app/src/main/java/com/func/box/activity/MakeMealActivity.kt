@@ -1,18 +1,6 @@
 package com.func.box.activity
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.func.box.MEAL_LIST
-import com.func.box.R
-import com.func.box.adapter.MenuListAdapter
-import com.func.box.adapter.MenuTypeAdapter
-import com.func.box.bean.MenuItem
-import com.func.box.databinding.MakeMealLayoutBinding
-import com.func.box.viewmodel.MealViewModel
-import com.ktx.lib.base.BaseVMActivity
-import com.ktx.lib.ext.*
-import org.koin.android.ext.android.get
 
 /**
  * 点餐页面

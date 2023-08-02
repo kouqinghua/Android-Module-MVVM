@@ -1,16 +1,6 @@
 package com.func.box.activity
 
 import androidx.appcompat.app.AppCompatActivity
-import com.func.box.MEAL_LIST
-import com.func.box.R
-import com.func.box.adapter.MealListAdapter
-import com.func.box.bean.MenuItem
-import com.func.box.databinding.MealDetailLayoutBinding
-import com.ktx.lib.base.BaseVMActivity
-import com.ktx.lib.ext.binding
-import com.ktx.lib.ext.closeFromTop
-import com.ktx.lib.ext.obtain
-import com.ktx.lib.ext.onClick
 
 class MealDetailActivity : AppCompatActivity() {
 

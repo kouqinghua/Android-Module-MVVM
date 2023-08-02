@@ -3,8 +3,8 @@ package com.func.box.adapter
 import android.annotation.SuppressLint
 import com.func.box.bean.MenuItem
 import com.func.box.databinding.ItemMenuLayoutBinding
-import com.ktx.lib.base.BaseBindAdapter
-import com.ktx.lib.ext.background
+import com.lib.base.app.BaseBindAdapter
+import com.lib.base.utils.background
 
 class MenuAdapter(layoutId: Int) : BaseBindAdapter<MenuItem, ItemMenuLayoutBinding>(layoutId) {
 
@@ -26,11 +26,7 @@ class MenuAdapter(layoutId: Int) : BaseBindAdapter<MenuItem, ItemMenuLayoutBindi
             mCount.text = data.count.toString()
             mPrice.text = "单价：¥ ${data.price}"
 
-            if (data.count > 0) {
-                mItem.background("#DDDDDD")
-            } else {
-                mItem.background("#FFFFFF")
-            }
+            mItem.background(if (data.count > 0) "#DDDDDD" else "#FFFFFF")
 
             mMinus.setOnClickListener {
                 onItemMinus?.invoke(position)

@@ -3,7 +3,7 @@ package com.func.box.adapter
 import com.func.box.R
 import com.func.box.bean.Menu
 import com.func.box.databinding.ItemMenuListLayoutBinding
-import com.ktx.lib.base.BaseBindAdapter
+import com.lib.base.app.BaseBindAdapter
 
 class MenuListAdapter(layoutId: Int) : BaseBindAdapter<Menu, ItemMenuListLayoutBinding>(layoutId) {
 
