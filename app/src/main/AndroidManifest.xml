@@ -35,7 +35,7 @@
         android:theme="@style/Theme.SuperFoot"
         tools:replace="android:allowBackup">
         <activity
-            android:name="com.func.box.activity.MainActivity"
+            android:name="com.func.box.activity.AppActivity"
             android:exported="true"
             android:theme="@style/Theme.Fullscreen">
             <intent-filter>

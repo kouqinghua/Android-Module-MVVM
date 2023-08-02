@@ -18,34 +18,6 @@ abstract class BaseVMActivity : BaseActivity() {
         initData()
     }
 
-    open fun initState(vm: BaseViewModel) {
-        vm.mLoadState.observe(this) {
-            when (it!!) {
-                LoadState.LOADING -> {
-                    loading()
-                }
-                LoadState.SUCCESS -> {
-                    success()
-                }
-                LoadState.COMPLETE -> {
-                    complete()
-                }
-                LoadState.EMPTY -> {
-                    empty()
-                }
-                LoadState.ERROR -> {
-                    error()
-                }
-                LoadState.NET_ERROR -> {
-                    netError()
-                }
-                LoadState.HIDE -> {
-//                    hideProgress()
-                }
-            }
-        }
-    }
-
     abstract fun initView()
 
     abstract fun observer()

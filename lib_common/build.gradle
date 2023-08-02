@@ -37,11 +37,19 @@ android {
     }
 }
 
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
 dependencies {
     implementation rootProject.ext.dependencies.publicDependencies
 
-    rootProject.ext.dependencies.common.each {
-        api(it)
+    api project(path: ':lib_base')
+
+    rootProject.ext.dependencies.compiler.each {
+        kapt(it)
     }
 
     testImplementation 'junit:junit:4.13.2'

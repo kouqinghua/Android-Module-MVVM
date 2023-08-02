@@ -1,20 +1,20 @@
 package com.module.login.activity
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.lib.common.PagePath
-import com.lib.common.net.RetrofitClient
-import com.module.login.R
+import com.lib.base.mvvm.v.BaseActivity
+import com.lib.base.utils.console
+import com.lib.common.router.RoutePath
+import com.module.login.databinding.LoginLayoutBinding
+import com.module.login.viewmodel.LoginViewModel
+import org.koin.android.ext.android.get
 
-@Route(path = PagePath.login)
-class LoginActivity : AppCompatActivity() {
+@Route(path = RoutePath.Login.ACTIVITY_LOGIN)
+class LoginActivity : BaseActivity<LoginLayoutBinding, LoginViewModel>() {
+    override val mViewModel: LoginViewModel = get()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.login_layout)
-
-//        RetrofitClient.retrofit.create()
+    override fun initialize() {
+        mViewModel.getBanner().observe(this){
+            console(it[0].title)
+        }
     }
 }

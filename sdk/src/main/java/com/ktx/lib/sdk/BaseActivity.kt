@@ -98,23 +98,19 @@ abstract class BaseActivity : AppCompatActivity(), LifecycleObserver {
      * 设置标题
      */
     protected fun setBarTitle(title: String) {
-        mBaseBinding.mActionBar.run {
-            setBarTitle(title)
-        }
+
     }
 
     /**
      * 隐藏标题栏左侧按钮
      */
     fun hideLeftBack() {
-        mBaseBinding.mActionBar.hideLeftBack()
     }
 
     /**
      * 隐藏标题栏
      */
     fun hideActionBar() {
-        mBaseBinding.mActionBar.isVisible = false
     }
 
     /**
