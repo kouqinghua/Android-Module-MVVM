@@ -44,7 +44,7 @@ open class BaseApplication : Application() {
         LogCat.e("BaseApplication onCreate")
         // 全局监听 Activity 生命周期
         registerActivityLifecycleCallbacks(ActivityLifecycleCallbacksImpl())
-        mLoadModuleProxy.onCreate(get())
+        mLoadModuleProxy.onCreate(application)
         // 策略初始化第三方依赖
         initDepends()
     }
@@ -71,7 +71,7 @@ open class BaseApplication : Application() {
 
     override fun onTerminate() {
         super.onTerminate()
-        mLoadModuleProxy.onTerminate(get())
+        mLoadModuleProxy.onTerminate(application)
         mCoroutineScope.cancel()
     }
 }

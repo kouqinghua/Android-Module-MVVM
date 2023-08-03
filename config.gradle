@@ -20,15 +20,15 @@ ext {
     immersionbar_version = '3.2.2'
 
     dependencies = [
-            publicDependencies: [
-                    'androidx.core:core-ktx:1.7.0',
-                    'androidx.appcompat:appcompat:1.4.1',
-                    'com.google.android.material:material:1.5.0',
-                    'androidx.constraintlayout:constraintlayout:2.1.0',
+            base    : [
+                    "androidx.core:core-ktx:1.7.0",
+                    "androidx.appcompat:appcompat:1.4.1",
+                    "com.google.android.material:material:1.5.0",
+                    "androidx.constraintlayout:constraintlayout:2.1.0",
                     "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
             ],
             // 公共库 引用方式 api
-            common            : [
+            common  : [
                     "androidx.fragment:fragment-ktx:$fragment_version",
                     "androidx.activity:activity-ktx:$activity_version",
                     "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
@@ -58,13 +58,13 @@ ext {
                     "io.github.jeremyliao:live-event-bus-x:1.8.0"
             ],
             // compiler库 引用方式 kapt 基本上都需要引用, lib_common中可以不引入
-            compiler          : [
+            compiler: [
                     "com.github.bumptech.glide:compiler:$glide_version",
                     "com.alibaba:arouter-compiler:$arouter_version",
                     "com.google.auto.service:auto-service-annotations:1.0"
             ],
             // 组件库 在app主模块中引入
-            modules           : [
+            modules : [
                     ':module_login',
                     ':module_main'
             ]

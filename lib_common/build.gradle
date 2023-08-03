@@ -44,15 +44,9 @@ kapt {
 }
 
 dependencies {
-    implementation rootProject.ext.dependencies.publicDependencies
-
     api project(path: ':lib_base')
 
     rootProject.ext.dependencies.compiler.each {
         kapt(it)
     }
-
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

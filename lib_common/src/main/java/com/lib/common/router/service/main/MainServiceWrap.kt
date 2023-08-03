@@ -21,8 +21,6 @@ class MainServiceWrap private constructor() : BaseServiceWrap() {
 
 
     fun toMainTabActivity(activity: Activity) {
-        console(service.getModuleName(), "service.getModuleName()")
-
         ARouter.getInstance().build(RoutePath.Main.ACTIVITY_MAIN).navigation(activity)
     }
 }
