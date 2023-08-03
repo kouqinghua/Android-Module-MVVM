@@ -14,6 +14,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.Observer
 import androidx.viewbinding.ViewBinding
 import com.gyf.immersionbar.ImmersionBar
+import com.gyf.immersionbar.ktx.immersionBar
 import com.lib.base.R
 import com.lib.base.app.BaseConfig.statusBarDarkMode
 import com.lib.base.databinding.ActivityBaseLayoutBinding
@@ -60,7 +61,6 @@ abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mmContext = this
-        setToolbar(statusBarDarkMode, Color.WHITE)
         initNetworkListener()
         initBase()
     }
@@ -68,23 +68,20 @@ abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActi
     private fun initBase() {
         mBaseBinding = DataBindingUtil.setContentView(this, R.layout.activity_base_layout)
         mBaseBinding.mBaseContainer.addView(mBinding.root)
-        mLoadingBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.loading_layout, null, false)
+        mLoadingBinding = LoadingLayoutBinding.inflate(layoutInflater)
         mViewModel.loadState.observe(this@BaseActivity, observer)
+        setToolbar(statusBarDarkMode)
         initialize()
         mBinding.initView()
         initRequestData()
     }
 
-    protected open fun setToolbar(isDarkFont: Boolean, color: Int) {
-        ImmersionBar.with(this)
-            // 原理：如果当前设备支持状态栏字体变色，会设置状态栏字体为黑色，如果当前设备不支持状态栏字体变色，会使当前状态栏加上透明度，否则不执行透明度
-            .statusBarDarkFont(isDarkFont)
-            // 状态栏颜色，不写默认透明色
-            // .statusBarColor(color)
-            //去掉状态栏
-            .fitsSystemWindows(false)
-            .transparentBar()
-            .init()
+    protected open fun setToolbar(isDarkFont: Boolean) {
+        immersionBar {
+            statusBarDarkFont(isDarkFont)
+            fitsSystemWindows(true)
+            transparentBar()
+        }
     }
 
     /**
