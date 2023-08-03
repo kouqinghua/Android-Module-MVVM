@@ -50,6 +50,7 @@ class CommonApplication : ApplicationLifecycle {
         // 以下只需要在主进程当中初始化 按需要调整
         if (ProcessUtils.isMainProcess(application)) {
             list.add { BasicLibInit.initARouter() }
+            list.add { BasicLibInit.initMMKV() }
         }
         return list
     }
@@ -58,5 +59,6 @@ class CommonApplication : ApplicationLifecycle {
      * 不需要立即初始化的放在这里进行后台初始化
      */
     override fun initByBackstage() {
+        BasicLibInit.initLogcat()
     }
 }

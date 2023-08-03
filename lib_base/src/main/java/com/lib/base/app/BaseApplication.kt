@@ -3,11 +3,13 @@ package com.lib.base.app
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import com.lib.base.di.module
 import com.lib.base.network.log.LogCat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import kotlin.system.measureTimeMillis
@@ -35,11 +37,14 @@ open class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        startKoin { androidContext(application) }
+        startKoin {
+            androidContext(application)
+            modules(module)
+        }
         LogCat.e("BaseApplication onCreate")
         // 全局监听 Activity 生命周期
         registerActivityLifecycleCallbacks(ActivityLifecycleCallbacksImpl())
-        mLoadModuleProxy.onCreate(this)
+        mLoadModuleProxy.onCreate(get())
         // 策略初始化第三方依赖
         initDepends()
     }
@@ -66,7 +71,7 @@ open class BaseApplication : Application() {
 
     override fun onTerminate() {
         super.onTerminate()
-        mLoadModuleProxy.onTerminate(this)
+        mLoadModuleProxy.onTerminate(get())
         mCoroutineScope.cancel()
     }
 }

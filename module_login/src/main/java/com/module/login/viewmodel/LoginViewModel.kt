@@ -6,9 +6,9 @@ import com.lib.base.network.initiateRequest
 import com.module.login.bean.LoginBanner
 import com.module.login.repository.LoginRepository
 
-class LoginViewModel : BaseViewModel() {
+class LoginViewModel(private val repo:LoginRepository) : BaseViewModel() {
 
-    private val repo by lazy { LoginRepository(loadState) }
+//    private val repo by lazy { LoginRepository(loadState) }
 
     fun getBanner(): MutableLiveData<LoginBanner> {
         val data = MutableLiveData<LoginBanner>()

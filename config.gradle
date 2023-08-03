@@ -51,7 +51,11 @@ ext {
                     // AndroidAutoSize
                     "com.github.JessYanCoding:AndroidAutoSize:v1.2.1",
                     // EasyPhotos
-                    "com.github.HuanTanSheng:EasyPhotos:3.1.5"
+                    "com.github.HuanTanSheng:EasyPhotos:3.1.5",
+                    // 腾讯 MMKV
+                    "com.tencent:mmkv-static:1.2.9",
+                    // LiveEventBus
+                    "io.github.jeremyliao:live-event-bus-x:1.8.0"
             ],
             // compiler库 引用方式 kapt 基本上都需要引用, lib_common中可以不引入
             compiler          : [

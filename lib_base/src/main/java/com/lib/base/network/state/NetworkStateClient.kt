@@ -1,5 +1,6 @@
 package com.lib.base.network.state
 
+import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkRequest
@@ -17,10 +18,10 @@ object NetworkStateClient {
      * @return Unit
      */
     @RequiresPermission(android.Manifest.permission.ACCESS_NETWORK_STATE)
-    fun register(context: Context) {
+    fun register(application: Application) {
         val build = NetworkRequest.Builder().build()
         val cm =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            application.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         cm.registerNetworkCallback(build, mNetworkCallback)
     }
 
