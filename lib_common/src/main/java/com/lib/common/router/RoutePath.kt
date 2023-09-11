@@ -14,4 +14,9 @@ object RoutePath {
         const val SERVICE_MAIN = "$MAIN/main_service"
         const val ACTIVITY_MAIN = "$MAIN/MainActivity"
     }
+    object Camera {
+        private const val Camera = "/camera"
+        const val SERVICE_CAMERA = "$Camera/camera_service"
+        const val ACTIVITY_CAMERA = "$Camera/CameraActivity"
+    }
 }

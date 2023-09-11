@@ -73,6 +73,7 @@ abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActi
         setToolbar(statusBarDarkMode)
         initialize()
         mBinding.initView()
+        initObserve()
         initRequestData()
     }
 

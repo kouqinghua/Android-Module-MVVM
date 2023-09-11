@@ -18,6 +18,11 @@ interface FrameView<V : ViewBinding> {
     fun initialize()
 
     /**
+     * 订阅LiveData
+     */
+    fun initObserve()
+
+    /**
      * 用于在页面创建时进行请求接口
      */
     fun initRequestData()

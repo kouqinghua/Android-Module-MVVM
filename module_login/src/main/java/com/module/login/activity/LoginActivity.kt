@@ -19,9 +19,13 @@ class LoginActivity : BaseActivity<LoginLayoutBinding, LoginViewModel>() {
     override fun LoginLayoutBinding.initView() {
     }
 
-    override fun initRequestData() {
-        mViewModel.getBanner().observe(this) {
+    override fun initObserve() {
+        mViewModel.data.observe(this){
             console(it[0].title)
         }
+    }
+
+    override fun initRequestData() {
+        mViewModel.getBanner()
     }
 }

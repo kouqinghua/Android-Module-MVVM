@@ -66,7 +66,8 @@ ext {
             // 组件库 在app主模块中引入
             modules : [
                     ':module_login',
-                    ':module_main'
+                    ':module_main',
+                    ':module_camera'
             ]
     ]
 }
