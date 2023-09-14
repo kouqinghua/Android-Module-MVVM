@@ -17,10 +17,11 @@ ext {
     arouter_version = '1.5.1'
     glide_version = '4.10.0'
     koin_version = '2.0.1'
+    camera_version = '1.1.0'
     immersionbar_version = '3.2.2'
 
     dependencies = [
-            base    : [
+            base        : [
                     "androidx.core:core-ktx:1.7.0",
                     "androidx.appcompat:appcompat:1.4.1",
                     "com.google.android.material:material:1.5.0",
@@ -28,7 +29,7 @@ ext {
                     "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
             ],
             // 公共库 引用方式 api
-            common  : [
+            common      : [
                     "androidx.fragment:fragment-ktx:$fragment_version",
                     "androidx.activity:activity-ktx:$activity_version",
                     "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
@@ -55,19 +56,37 @@ ext {
                     // 腾讯 MMKV
                     "com.tencent:mmkv-static:1.2.9",
                     // LiveEventBus
-                    "io.github.jeremyliao:live-event-bus-x:1.8.0"
+                    "io.github.jeremyliao:live-event-bus-x:1.8.0",
+                    // xui
+                    "com.github.xuexiangjys:XUI:1.2.1"
+            ],
+            splashscreen: "androidx.core:core-splashscreen:1.0.0-beta02",
+            camera      : [
+                    // The following line is optional, as the core library is included indirectly by camera-camera2
+                    "androidx.camera:camera-core:$camera_version",
+                    "androidx.camera:camera-camera2:$camera_version",
+                    // If you want to additionally use the CameraX Lifecycle library
+                    "androidx.camera:camera-lifecycle:$camera_version",
+                    // If you want to additionally use the CameraX VideoCapture library
+                    "androidx.camera:camera-video:$camera_version",
+                    // If you want to additionally use the CameraX View class
+                    "androidx.camera:camera-view:$camera_version",
+                    // If you want to additionally add CameraX ML Kit Vision Integration
+                    // "androidx.camera:camera-mlkit-vision:$camera_version",
+                    // If you want to additionally use the CameraX Extensions library
+                    "androidx.camera:camera-extensions:$camera_version"
             ],
             // compiler库 引用方式 kapt 基本上都需要引用, lib_common中可以不引入
-            compiler: [
+            compiler    : [
                     "com.github.bumptech.glide:compiler:$glide_version",
                     "com.alibaba:arouter-compiler:$arouter_version",
                     "com.google.auto.service:auto-service-annotations:1.0"
             ],
             // 组件库 在app主模块中引入
-            modules : [
-                    ':module_login',
-                    ':module_main',
-                    ':module_camera'
+            modules     : [
+                    ':module:login',
+                    ':module:main',
+                    ':module:camera'
             ]
     ]
 }

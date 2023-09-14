@@ -70,8 +70,7 @@
                     <ImageView
                         android:id="@+id/mMinus"
                         android:layout_width="@dimen/dp_20"
-                        android:layout_height="@dimen/dp_20"
-                        android:background="@mipmap/icon_minus" />
+                        android:layout_height="@dimen/dp_20" />
 
                     <TextView
                         android:id="@+id/mCount"
@@ -85,8 +84,7 @@
                     <ImageView
                         android:id="@+id/mAdd"
                         android:layout_width="@dimen/dp_20"
-                        android:layout_height="@dimen/dp_20"
-                        android:background="@mipmap/icon_add" />
+                        android:layout_height="@dimen/dp_20"/>
                 </LinearLayout>
 
             </RelativeLayout>

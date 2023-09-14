@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff00ff"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.xuexiang.xui.widget.layout.XUIFrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:xui_radius="@dimen/dp_10">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/mPreviewView"
+                android:layout_width="200dp"
+                android:layout_height="300dp" />
+        </com.xuexiang.xui.widget.layout.XUIFrameLayout>
+
+        <ImageView
+            android:id="@+id/mImage"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mTakePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:text="拍照"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</RelativeLayout>

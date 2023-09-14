@@ -66,7 +66,9 @@ kapt {
 dependencies {
 
     // 正式场景下，壳App中不会包含相关业务逻辑 应该将下面的引入注释
-    implementation project(path: ':lib_common')
+    implementation project(path: ':lib:common')
+
+    implementation rootProject.ext.dependencies.splashscreen
 
     rootProject.ext.dependencies.modules.each {
         implementation project(path: it)

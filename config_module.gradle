@@ -59,7 +59,7 @@ kapt {
 }
 
 dependencies {
-    api project(path: ':lib_common')
+    api project(path: ':lib:common')
 
     rootProject.ext.dependencies.compiler.each {
         kapt(it)
