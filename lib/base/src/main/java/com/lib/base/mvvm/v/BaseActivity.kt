@@ -26,11 +26,11 @@ import com.lib.base.utils.BugFixUtils
 import com.lib.base.utils.console
 import me.jessyan.autosize.internal.CustomAdapt
 
-abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActivity(), FrameView<V>, CustomAdapt, NetworkStateChangeListener {
+abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatActivity(), FrameView<VB>, CustomAdapt, NetworkStateChangeListener {
 
     protected val mHandler = Handler(Looper.getMainLooper())
     protected lateinit var mmContext: Context
-    protected val mBinding: V by lazy(mode = LazyThreadSafetyMode.NONE) {
+    protected val mBinding: VB by lazy(mode = LazyThreadSafetyMode.NONE) {
         BindingReflex.reflexViewBinding(javaClass, layoutInflater)
     }
     protected abstract val mViewModel: VM

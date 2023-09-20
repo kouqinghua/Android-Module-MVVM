@@ -2,8 +2,8 @@ ext {
     // 开发测试模式 true-->isModule
     // 上线打包模式 false-->library
     isApp = false
-    compileSdkVersion = 33
-    targetSdkVersion = 33
+    compileSdkVersion = 32
+    targetSdkVersion = 32
     minSdkVersion = 21
     versionCode = 10
     versionName = '1.0'
@@ -13,7 +13,7 @@ ext {
     lifecycle_version = '2.4.1'
     retrofit_version = '2.9.0'
     fragment_version = '1.5.5'
-    activity_version = '1.6.1'
+    activity_version = '1.5.1'
     arouter_version = '1.5.1'
     glide_version = '4.10.0'
     koin_version = '2.0.1'
@@ -86,7 +86,9 @@ ext {
             modules     : [
                     ':module:login',
                     ':module:main',
-                    ':module:camera'
+                    ':module:camera',
+                    ':module:meal',
+                    ':module:wifi'
             ]
     ]
 }

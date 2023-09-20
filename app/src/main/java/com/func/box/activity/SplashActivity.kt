@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewTreeObserver
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.func.box.R
 import com.func.box.databinding.ActivitySplashBinding
 import com.lib.base.mvvm.v.BaseActivity
 import com.lib.base.mvvm.vm.BaseViewModel
@@ -60,6 +59,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, BaseViewModel>() {
     }
 
     private fun startHome() {
+//        WifiServiceWrap.instance.toWifiActivity(this)
         MainServiceWrap.instance.toMainTabActivity(this)
         Handler(Looper.getMainLooper()).postDelayed({
             finish()

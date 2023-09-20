@@ -6,8 +6,7 @@ import com.lib.base.app.BaseBindAdapter
 import com.lib.base.mvvm.v.BaseActivity
 import com.lib.base.utils.GridDecoration
 import com.lib.common.router.RoutePath
-import com.lib.common.router.service.camera.CameraServiceWrap
-import com.lib.common.router.service.login.LoginServiceWrap
+import com.lib.common.router.service.grid.GridServiceWrap
 import com.module.main.R
 import com.module.main.adapter.RoomAdapter
 import com.module.main.databinding.ActivityMainBinding
@@ -44,7 +43,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), BaseBin
     }
 
     override fun onItemClick(position: Int) {
-        CameraServiceWrap.instance.toCameraActivity(this)
+        GridServiceWrap.instance.toGridActivity(this)
+//        CameraServiceWrap.instance.toCameraActivity(this)
 //        LoginServiceWrap.instance.toLoginActivity(this)
     }
 }

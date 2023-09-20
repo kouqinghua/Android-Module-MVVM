@@ -2,6 +2,8 @@ package com.lib.base.utils
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.activity.ComponentActivity
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -17,6 +19,7 @@ import java.util.*
  * Class 描述 : 用于反射获取 ViewModel  和 ViewBinding
  */
 object BindingReflex {
+
     /**
      * 反射获取ViewBinding
      *
@@ -53,7 +56,7 @@ object BindingReflex {
     }
 
     /**
-     * 反射获取ViewBinding\
+     * 反射获取ViewBinding
      */
     fun <V : ViewBinding> reflexViewBinding(
         aClass: Class<*>,
