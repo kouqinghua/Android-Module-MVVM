@@ -8,14 +8,14 @@ import androidx.viewbinding.ViewBinding
 interface FrameView<V : ViewBinding> {
 
     /**
-     * 初始化View
-     */
-    fun V.initView()
-
-    /**
      * 初始化数据
      */
     fun initialize()
+
+    /**
+     * 初始化View
+     */
+    fun V.initView()
 
     /**
      * 订阅LiveData

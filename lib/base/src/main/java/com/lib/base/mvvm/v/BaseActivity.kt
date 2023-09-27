@@ -1,6 +1,8 @@
 package com.lib.base.mvvm.v
 
+import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -30,6 +32,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
 
     protected val mHandler = Handler(Looper.getMainLooper())
     protected lateinit var mmContext: Context
+    protected lateinit var mmActivity: Activity
     protected val mBinding: VB by lazy(mode = LazyThreadSafetyMode.NONE) {
         BindingReflex.reflexViewBinding(javaClass, layoutInflater)
     }
@@ -56,6 +59,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mmContext = this
+        mmActivity = this
         initNetworkListener()
         initBase()
     }
@@ -72,12 +76,21 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
         initRequestData()
     }
 
+    // fits:false-->去掉状态栏
     protected open fun setToolbar(isDarkFont: Boolean) {
         immersionBar {
             statusBarDarkFont(isDarkFont)
             fitsSystemWindows(true)
             transparentBar()
         }
+    }
+
+    protected fun setBarTitle(title: String) {
+        mBaseBinding.mActionBar.setBarTitle(title)
+    }
+
+    protected fun hideBackIcon() {
+        mBaseBinding.mActionBar.hideLeftBack()
     }
 
     /**

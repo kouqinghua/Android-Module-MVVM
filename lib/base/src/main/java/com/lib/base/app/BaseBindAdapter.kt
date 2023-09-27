@@ -15,24 +15,15 @@ abstract class BaseBindAdapter<T, B : ViewDataBinding>(private val layoutId: Int
     private var lists = arrayListOf<T>()
     private var type: String? = null
 
-    private var onItemClickListener: OnItemClickListener? = null
-    private var onTypeItemClickListener: OnTypeItemClickListener? = null
+    private var onItemClickListener: ((position: Int, type: String) -> Unit)? = null
 
-    private var onItemClick: ((position: Int) -> Unit)? = null
-
-    fun setOnItemClick(click: (position: Int) -> Unit) {
-        this.onItemClick = click
-    }
-
-    fun setOnItemClickListener(onItemClickListener: OnItemClickListener) {
+    fun setOnItemClickListener(onItemClickListener: (position: Int, type: String) -> Unit) {
         this.onItemClickListener = onItemClickListener
+        this.type = "default"
     }
 
-    fun setOnTypeItemClickListener(
-        onTypeItemClickListener: OnTypeItemClickListener,
-        type: String = "default"
-    ) {
-        this.onTypeItemClickListener = onTypeItemClickListener
+    fun setOnItemClickListener(onItemClickListener: (position: Int, type: String) -> Unit, type: String) {
+        this.onItemClickListener = onItemClickListener
         this.type = type
     }
 
@@ -51,22 +42,8 @@ abstract class BaseBindAdapter<T, B : ViewDataBinding>(private val layoutId: Int
     override fun onBindViewHolder(holder: ViewHolder<B>, position: Int) {
         invoke(holder.binding, lists[position], position)
 
-        onItemClickListener?.let {
-            holder.binding.root.setOnClickListener {
-                onItemClickListener?.onItemClick(position)
-            }
-        }
-
-        onItemClick?.let {
-            holder.binding.root.setOnClickListener {
-                onItemClick?.invoke(position)
-            }
-        }
-
-        onTypeItemClickListener?.let {
-            holder.binding.root.setOnClickListener {
-                onTypeItemClickListener?.onTypeItemClick(position, type!!)
-            }
+        holder.binding.root.setOnClickListener {
+            onItemClickListener?.invoke(position, type!!)
         }
     }
 

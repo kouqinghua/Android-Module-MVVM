@@ -1,5 +1,6 @@
 package com.module.grid.activity
 
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.GridLayoutManager
@@ -8,6 +9,7 @@ import com.lib.base.app.BaseBindAdapter
 import com.lib.base.mvvm.v.BaseActivity
 import com.lib.base.mvvm.vm.BaseViewModel
 import com.lib.base.utils.GridDecoration
+import com.lib.base.utils.toast
 import com.lib.common.router.RoutePath
 import com.module.grid.R
 import com.module.grid.adapter.RoomAdapter
@@ -17,8 +19,9 @@ import org.koin.android.ext.android.get
 
 
 @Route(path = RoutePath.Grid.ACTIVITY_GRID)
-class GridActivity : BaseActivity<ActivityGridBinding, MealViewModel>(), BaseBindAdapter.OnItemClickListener {
+class GridActivity : BaseActivity<ActivityGridBinding, MealViewModel>() {
 
+    private val adapter by lazy { RoomAdapter() }
 
     override val mViewModel: MealViewModel = get()
 
@@ -26,9 +29,11 @@ class GridActivity : BaseActivity<ActivityGridBinding, MealViewModel>(), BaseBin
         mRooms.addItemDecoration(GridDecoration(5, 3))
         mRooms.layoutManager = GridLayoutManager(mmContext, 3)
 
-        val adapter = RoomAdapter()
+
         adapter.setData(mViewModel.getRooms())
-        adapter.setOnItemClickListener(this@GridActivity)
+        adapter.setOnItemClickListener { _, _ ->
+            toast("跳转点餐页面")
+        }
         mRooms.adapter = adapter
     }
 
@@ -39,9 +44,5 @@ class GridActivity : BaseActivity<ActivityGridBinding, MealViewModel>(), BaseBin
     }
 
     override fun initRequestData() {
-    }
-
-    override fun onItemClick(position: Int) {
-
     }
 }

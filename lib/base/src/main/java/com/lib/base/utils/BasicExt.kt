@@ -1,8 +1,7 @@
 package com.lib.base.utils
 
 import android.content.Context
-import android.util.Log
-import androidx.fragment.app.Fragment
+import android.widget.Toast
 import com.lib.base.app.BaseApplication
 import com.lib.base.network.log.LogCat
 
@@ -38,4 +37,8 @@ fun console(str: Any?) {
 
 fun console(str: Any?, tag: String = "自定义Log") {
     LogCat.e("$str", "====>$tag")
+}
+
+fun Context.toast(str: String) {
+    Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
 }

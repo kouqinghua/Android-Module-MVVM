@@ -6,7 +6,7 @@
     <color name="common_white">#FFFFFF</color>
     <color name="common_black">#FF303747</color>
 
-    <color name="common_colorBackground">#F8F9FA</color>
+    <color name="common_colorBackground">#FFFFFF</color>
     <color name="common_divider_color">#10303747</color>
 
     <color name="purple_200">#FFBB86FC</color>

@@ -32,4 +32,10 @@ object RoutePath {
         const val SERVICE_GRID = "$Grid/grid_service"
         const val ACTIVITY_GRID = "$Grid/GridActivity"
     }
+
+    object Progress {
+        private const val Progress = "/progress"
+        const val SERVICE_PROGRESS = "$Progress/progress_service"
+        const val ACTIVITY_PROGRESS = "$Progress/ProgressActivity"
+    }
 }

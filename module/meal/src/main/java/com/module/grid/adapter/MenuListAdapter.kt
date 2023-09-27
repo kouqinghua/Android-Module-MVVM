@@ -30,8 +30,8 @@ class MenuListAdapter(layoutId: Int) : BaseBindAdapter<Menu, ItemMenuListLayoutB
         adapter.setData(data.list)
         binding.mMenus.adapter = adapter
 
-        adapter.setOnItemClick {
-            onChildClick?.invoke(position, it)
+        adapter.setOnItemClickListener { index, _ ->
+            onChildClick?.invoke(position, index)
         }
 
         adapter.setItemAdd {
