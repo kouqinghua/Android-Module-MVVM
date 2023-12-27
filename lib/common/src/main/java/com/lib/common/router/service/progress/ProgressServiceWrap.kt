@@ -5,7 +5,6 @@ import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.launcher.ARouter
 import com.lib.common.router.RoutePath
 import com.lib.common.router.service.BaseServiceWrap
-import com.lib.common.router.service.wifi.IWifiService
 
 class ProgressServiceWrap private constructor() : BaseServiceWrap() {
 
