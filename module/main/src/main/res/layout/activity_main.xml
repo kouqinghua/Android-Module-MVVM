@@ -29,71 +29,6 @@
                 android:textSize="@dimen/sp_16"
                 android:textStyle="bold" />
         </com.xuexiang.xui.widget.layout.XUIFrameLayout>
-
-        <com.xuexiang.xui.widget.layout.XUIFrameLayout
-            android:id="@+id/toCamera"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_weight="1"
-            android:background="#712bcf"
-            app:xui_radius="@dimen/dp_10">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_45"
-
-                android:gravity="center"
-                android:text="module:camera"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_16"
-                android:textStyle="bold" />
-        </com.xuexiang.xui.widget.layout.XUIFrameLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="25dp">
-
-        <com.xuexiang.xui.widget.layout.XUIFrameLayout
-            android:id="@+id/toMeal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#712bcf"
-            app:xui_radius="@dimen/dp_10">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_45"
-                android:gravity="center"
-                android:text="module:meal"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_16"
-                android:textStyle="bold" />
-        </com.xuexiang.xui.widget.layout.XUIFrameLayout>
-
-        <com.xuexiang.xui.widget.layout.XUIFrameLayout
-            android:id="@+id/toWifi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_weight="1"
-            android:background="#712bcf"
-            app:xui_radius="@dimen/dp_10">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_45"
-                android:gravity="center"
-                android:text="module:wifi"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_16"
-                android:textStyle="bold" />
-        </com.xuexiang.xui.widget.layout.XUIFrameLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -116,25 +51,6 @@
                 android:layout_height="@dimen/dp_45"
                 android:gravity="center"
                 android:text="module:progress"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_16"
-                android:textStyle="bold" />
-        </com.xuexiang.xui.widget.layout.XUIFrameLayout>
-
-        <com.xuexiang.xui.widget.layout.XUIFrameLayout
-            android:id="@+id/toFingerprint"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_weight="1"
-            android:background="#712bcf"
-            app:xui_radius="@dimen/dp_10">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_45"
-                android:gravity="center"
-                android:text="module:fingerprint"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_16"
                 android:textStyle="bold" />

@@ -19,7 +19,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+            abiFilters "armeabi-v7a"
         }
     }
 
@@ -64,7 +64,6 @@ kapt {
 }
 
 dependencies {
-
     // 正式场景下，壳App中不会包含相关业务逻辑 应该将下面的引入注释
     implementation project(path: ':lib:common')
 
@@ -73,6 +72,4 @@ dependencies {
     rootProject.ext.dependencies.modules.each {
         implementation project(path: it)
     }
-
-    implementation(name: 'ble-release', ext: 'aar')
 }

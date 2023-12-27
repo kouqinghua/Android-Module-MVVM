@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mLoading"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/xml_progress_dialog_bg"
-    android:minWidth="120dp"
-    android:minHeight="120dp"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+    <com.xuexiang.xui.widget.layout.XUILinearLayout
+        android:id="@+id/mLoadingWrap"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:background="#99000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:xui_radius="6dp">
 
-        <ProgressBar
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:indeterminateDrawable="@drawable/app_loading_anim" />
+        <com.xuexiang.xui.widget.progress.loading.MiniLoadingView
+            android:id="@+id/mLoadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:mlv_loading_view_size="26dp" />
 
         <TextView
-            android:id="@+id/mLoadText"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:text="加载中..."
             android:textColor="@color/white"
-            android:textSize="13sp"
-            android:visibility="gone" />
-    </LinearLayout>
-</FrameLayout>
+            android:textSize="12sp" />
+    </com.xuexiang.xui.widget.layout.XUILinearLayout>
+</RelativeLayout>

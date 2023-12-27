@@ -39,6 +39,6 @@ fun console(str: Any?, tag: String = "自定义Log") {
     LogCat.e("$str", "====>$tag")
 }
 
-fun Context.toast(str: String) {
-    Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+fun toast(str: String) {
+    Toast.makeText(BaseApplication.context, str, Toast.LENGTH_SHORT).show()
 }

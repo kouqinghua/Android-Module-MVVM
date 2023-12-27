@@ -1,7 +1,0 @@
-apply from: '../../config_module.gradle'
-
-dependencies {
-    rootProject.ext.dependencies.camera.each {
-        implementation(it)
-    }
-}

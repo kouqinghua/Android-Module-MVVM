@@ -64,7 +64,9 @@ ext {
                     // LiveEventBus
                     "io.github.jeremyliao:live-event-bus-x:1.8.0",
                     // xui
-                    "com.github.xuexiangjys:XUI:1.2.1"
+                    "com.github.xuexiangjys:XUI:1.2.1",
+                    // XPopup
+                    "com.github.li-xiaojun:XPopup:2.9.19"
             ],
             splashscreen: "androidx.core:core-splashscreen:1.0.0-beta02",
             camera      : [
@@ -92,9 +94,6 @@ ext {
             modules     : [
                     ':module:login',
                     ':module:main',
-                    ':module:camera',
-                    ':module:meal',
-                    ':module:wifi',
                     ':module:progress'
             ]
     ]

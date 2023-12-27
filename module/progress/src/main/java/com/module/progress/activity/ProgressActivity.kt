@@ -10,6 +10,7 @@ import com.lib.base.mvvm.v.BaseActivity
 import com.lib.common.router.RoutePath
 import com.module.progress.R
 import com.module.progress.databinding.ActivityProgressBinding
+import com.module.progress.databinding.SpinnerNviBinding
 import com.module.progress.viewmodel.ProgressViewModel
 import com.xuexiang.xui.utils.DensityUtils
 import org.koin.android.ext.android.get
@@ -35,6 +36,11 @@ class ProgressActivity : BaseActivity<ActivityProgressBinding, ProgressViewModel
         Handler(Looper.getMainLooper()).postDelayed({
             startAnim()
         }, 1000)
+
+        val mNviBinding = SpinnerNviBinding.inflate(layoutInflater)
+
+        mSpinner.setPopupBackground(R.drawable.xml_spinner_layer)
+        mSpinner.setSpinnerView(mNviBinding.root)
     }
 
     override fun initObserve() {

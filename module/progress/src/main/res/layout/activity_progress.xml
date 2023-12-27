@@ -2,11 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ProgressBar
         android:id="@+id/mProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="@dimen/dp_300"
-        android:layout_height="@dimen/dp_20"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+        android:layout_height="@dimen/dp_20" />
+
+    <com.module.progress.view.Spinner
+        android:id="@+id/mSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
 </LinearLayout>
